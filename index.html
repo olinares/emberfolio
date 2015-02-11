@@ -10,49 +10,62 @@
 <body>
   <script type="text/x-handlebars">
     <div class="navbar">
-      <ul class="nav nav-tabs">
-        <li role="presentation">{{#link-to 'index'}}Home{{/link-to}}</li>
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active">{{#link-to 'index'}}Home{{/link-to}}</li>
         <li role="presentation">{{#link-to 'portfolio'}}Portfolio{{/link-to}}</li>
         <li role="presentation">{{#link-to 'resume'}}Resume{{/link-to}}</li>
       </ul>
     </div>
 
     {{outlet}}
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        &copy;2015 OzDevs.com
+      </div>
+    </nav>
+
   </script>
 
   <script type="text/x-handlebars" id="index">
-    <div class="carousel-component">
-      {{#carousel-component}}
-      {{#carousel-item class="active"}}
-      <img src="/img/bootstrap-mdo-sfmoma-01.jpg" alt="">
-      {{/carousel-item}}
-      {{#carousel-item}}
-      <img src="/img/bootstrap-mdo-sfmoma-02.jpg" alt="">
-      {{/carousel-item}}
-      {{#carousel-item}}
-      <img src="/img/bootstrap-mdo-sfmoma-03.jpg" alt="">
-      {{/carousel-item}}
-      {{/carousel-component}}
-
+    <div class="jumbotron">
+      <h1>Oz Developers!</h1>
+      <p>Welcome to OzDevs, we are engineering Wizards!</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Portfolio</a></p>
     </div>
   </script>
 
   <script type="text/x-handlebars" id="portfolio">
     <h1>Portfolio</h1>
-    <ul>
-      {{#each item in model}}
-      <li>{{item}}</li>
-      {{/each}}
-    </ul>
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="http://themes.muffingroup.com/rocco/wp-content/plugins/doptg/uploads/C6hNErNhZEQ7sQPzpHN6hdCemdY3crdkPCm4Q6gP2hYZgfKcOgEmSwMGnjWLF3MG9.jpg" alt="Portfolio">
+          <div class="caption">
+            <h3>My Gigs</h3>
+            <p>...</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </script>
 
   <script type="text/x-handlebars" id="resume">
     <h1>Resume</h1>
-    <ul>
-      {{#each item in model}}
-      <li>{{item}}</li>
-      {{/each}}
-    </ul>
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Panel heading</div>
+      <div class="panel-body">
+        <p>...</p>
+      </div>
+
+      <!-- Table -->
+      <table class="table">
+        ...
+      </table>
+    </div>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
